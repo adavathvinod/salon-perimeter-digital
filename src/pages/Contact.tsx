@@ -56,7 +56,7 @@ const Contact = () => {
                   <input type="time" value={form.time} onChange={e => update("time", e.target.value)} className="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <textarea placeholder="Additional message..." value={form.message} onChange={e => update("message", e.target.value)} rows={4} className="w-full rounded-xl border border-border bg-card px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none" maxLength={1000} />
-                <button type="submit" className="w-full rounded-full bg-primary py-3 font-bold text-primary-foreground hover:bg-gold-dark transition-colors flex items-center justify-center gap-2">
+                <button type="submit" className="w-full rounded-full bg-primary py-3 font-bold text-primary-foreground hover:opacity-90 transition-colors flex items-center justify-center gap-2">
                   <Send size={16} /> Send Booking Request
                 </button>
               </form>
@@ -88,7 +88,7 @@ const Contact = () => {
               {/* Map */}
               <div className="rounded-2xl overflow-hidden h-[350px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.123456789!2d78.3456789!3d17.3456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSalon+Perimeter+Kokapet!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.1508710860035!2d78.33353787493468!3d17.38561258350127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9514b5c99fed%3A0xa41d947028966395!2sSalon%20Perimeter%20Kokapet!5e1!3m2!1sen!2sin!4v1772628224466!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
