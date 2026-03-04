@@ -67,7 +67,7 @@ const Index = () => {
               </h1>
               <p className="text-lg text-cream/80 mb-8 font-body">{slides[slide].desc}</p>
               <div className="flex gap-4 flex-wrap">
-                <Link to="/contact" className="rounded-full bg-primary px-8 py-3 font-bold text-primary-foreground hover:bg-gold-dark transition-colors">
+                <Link to="/contact" className="rounded-full bg-primary px-8 py-3 font-bold text-primary-foreground hover:opacity-90 transition-colors">
                   Book Appointment
                 </Link>
                 <Link to="/about" className="rounded-full border-2 border-cream px-8 py-3 font-bold text-cream hover:bg-cream/10 transition-colors">
@@ -177,7 +177,7 @@ const Index = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Ready to <span className="text-gradient-gold">Transform</span> Your Look?</h2>
             <p className="text-cream/70 mb-8 max-w-xl mx-auto">Book your appointment today and experience luxury beauty care at Salon Perimeter Kokapet.</p>
-            <Link to="/contact" className="inline-block rounded-full bg-primary px-10 py-4 font-bold text-primary-foreground hover:bg-gold-dark transition-colors text-lg">
+            <Link to="/contact" className="inline-block rounded-full bg-primary px-10 py-4 font-bold text-primary-foreground hover:opacity-90 transition-colors text-lg">
               Book Now
             </Link>
           </motion.div>
