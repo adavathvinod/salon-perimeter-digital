@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star, ArrowRight, Scissors, Sparkles, Heart } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, ArrowRight } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -19,9 +19,9 @@ const slides = [
 ];
 
 const servicePreview = [
-  { icon: Scissors, title: "Hair Styling", desc: "Trendy cuts, blowouts & styling" },
-  { icon: Sparkles, title: "Bridal Makeup", desc: "Stunning bridal & party looks" },
-  { icon: Heart, title: "Skin Care", desc: "Facials, cleanup & glow treatments" },
+  { img: serviceHairstyling, title: "Hair Styling", desc: "Trendy haircuts, blowouts, updos, and styling for every occasion. Our expert stylists craft the perfect look tailored to your unique style.", link: "/services" },
+  { img: serviceBridal, title: "Bridal Makeup", desc: "Stunning bridal makeovers and party-ready looks that make your special day truly unforgettable with premium products.", link: "/services" },
+  { img: serviceFacial, title: "Skin Care", desc: "Customized facials, cleanups, and glow treatments for radiant, healthy skin using globally trusted skincare brands.", link: "/services" },
 ];
 
 const reviews = [
@@ -106,12 +106,15 @@ const Index = () => {
           {/* Services Preview */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {servicePreview.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="glass rounded-2xl p-8 text-center hover:gold-glow transition-shadow">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <s.icon className="text-primary" size={28} />
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }} className="glass rounded-2xl overflow-hidden hover:gold-glow transition-shadow group">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                 </div>
-                <h3 className="text-xl font-display font-semibold mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm">{s.desc}</p>
+                <div className="p-6">
+                  <h3 className="text-xl font-display font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{s.desc}</p>
+                  <Link to={s.link} className="text-primary font-bold text-sm hover:underline">Learn More →</Link>
+                </div>
               </motion.div>
             ))}
           </div>
