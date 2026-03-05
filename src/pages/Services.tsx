@@ -47,7 +47,7 @@ const Services = () => (
               <div className="p-6">
                 <h3 className="text-lg font-display font-semibold mb-2">{s.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{s.desc}</p>
-                <Link to="/contact" className="text-primary font-bold text-sm hover:underline">Book Now →</Link>
+                <Link to="/pricing" className="text-primary font-bold text-sm hover:underline">View Pricing →</Link>
               </div>
             </motion.div>
           ))}
