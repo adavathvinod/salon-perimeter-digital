@@ -209,20 +209,102 @@ export default function IntroAnimation() {
         ref={containerRef}
         className="relative w-full h-full flex items-center justify-center"
       >
-        {/* Intro Text */}
+        {/* Giant SS FILMS text - clipped to show images through */}
+        <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="relative"
+          >
+            {/* Background text outline for depth */}
+            <h1
+              className="text-[20vw] md:text-[18vw] lg:text-[16vw] font-black leading-[0.85] tracking-tighter text-center select-none"
+              style={{
+                WebkitTextStroke: '2px hsl(var(--primary) / 0.3)',
+                color: 'transparent',
+                position: 'absolute',
+                inset: 0,
+                transform: 'translate(4px, 4px)',
+              }}
+            >
+              SS
+              <br />
+              FILMS
+            </h1>
+            {/* Main text with mix-blend for image interaction */}
+            <h1
+              className="text-[20vw] md:text-[18vw] lg:text-[16vw] font-black leading-[0.85] tracking-tighter text-center select-none"
+              style={{
+                color: 'hsl(var(--foreground))',
+                mixBlendMode: 'difference',
+              }}
+            >
+              SS
+              <br />
+              FILMS
+            </h1>
+          </motion.div>
+        </div>
+
+        {/* Overlay info - top left */}
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none"
-          animate={{ opacity: introPhase === "circle" ? 0 : 1 }}
-          transition={{ duration: 0.8 }}
+          className="absolute top-20 left-6 md:left-10 z-20 pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: introPhase === "circle" ? 1 : 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gradient text-center leading-tight">
-            Next‑Gen Films for
-            <br />
-            Next‑Gen Brands.
-          </h1>
-          <p className="mt-6 text-sm uppercase tracking-[0.3em] text-muted-foreground">
-            Scroll to explore
+          <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary">
+            SS_FILMS // V.1.0
           </p>
+        </motion.div>
+
+        {/* Overlay info - right side */}
+        <motion.div
+          className="absolute top-20 right-6 md:right-10 z-20 pointer-events-none text-right"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: introPhase === "circle" ? 1 : 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+            SYS.ARCH: GENERATIVE_CORE
+          </p>
+          <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+            PROCESS: AI_FILM_GEN
+          </p>
+          <p className="text-[10px] font-mono uppercase tracking-wider text-primary">
+            {'>'} INITIALIZING SEQUENCE...
+          </p>
+        </motion.div>
+
+        {/* Bottom bar */}
+        <motion.div
+          className="absolute bottom-6 left-6 right-6 md:left-10 md:right-10 z-20 flex justify-between items-end pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: introPhase === "circle" ? 1 : 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+            AI-FIRST FILM STUDIO
+          </p>
+          <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+            STATUS: RENDERING REALITY
+          </p>
+        </motion.div>
+
+        {/* Scroll hint */}
+        <motion.div
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
+          animate={{ opacity: introPhase === "circle" ? 0 : 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.p
+            className="text-xs uppercase tracking-[0.3em] text-muted-foreground"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            Scroll to explore
+          </motion.p>
         </motion.div>
 
         {/* Arc Content */}
