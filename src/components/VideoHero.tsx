@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import heroVideoBg from "@/assets/hero-video-bg.jpg";
+import heroVideoBg from "@/assets/hero-video-bg.png";
 
 export default function VideoHero() {
   return (
